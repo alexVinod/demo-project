@@ -29,7 +29,7 @@ function initMap() {
 
         google.maps.event.addListener(marker,'click', (function(marker,index) {
         return function() {
-          infowindow.setContent(loc.title);
+          infowindow.setContent(`<img src="${loc.image}" width="150" height="150"><br>${loc.title}`);
           infowindow.open(map, marker);
         }
       })(marker, index));
