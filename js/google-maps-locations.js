@@ -1,4 +1,4 @@
-	function initMap() {
+function initMap() {
       const MyLocations=[
          {"title":"Sri Venkateswara Swamy Vaari Temple","place":"Tirupati","location":{"lat":13.683440,"lng":79.347443},"image":"https://lh5.googleusercontent.com/p/AF1QipP0c2D_tUHruP0RoGGAEINyMwdGEZ1B1akf69KG=w408-h289-k-no"},
          {"title":"Sri Prasanna Anjeneya Swamy Statue 7th Mile","place":"Tirupati","location":{"lat":13.661320,"lng":79.389248},"image":"http://www.indiastudychannel.com/attachments/IndiaCities/145432-52737-Hanuman-Statue-on-Foot-Hills-of-Tirumala.jpg"},
@@ -12,21 +12,20 @@
          {"title":"Kodanda Rama Swamy Temple","place":"Tirupati","location":{"lat":13.635125,"lng":79.416773},"image":"https://lh5.googleusercontent.com/proxy/P208CsogV2XEjGS39rNFO_738NSuTyrXpW4GkdPVjjUe4tNLJYnEbCgqkAKUzNoEVyEMTAfLqqNlynB3xl_-IDVW0zyyLZ8ZXf_HrG0lUvFRakViUVxPL3Rz3Wm0ocbTDp2TxxRp1LHP7T9UXZbEHWP1s1uCyNk=w408-h494-k-no"}
         ]
 		
-		  var location = {lat: 13.631921, lng: 79.417978}; 
-		
-		  var map = new google.maps.Map(
-		      document.getElementById('map'), {zoom: 15, center: location});
+	var location = {lat: 13.631921, lng: 79.417978}; 
+	
+	var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 15, center: location
+	});
 
-      var infowindow = new google.maps.InfoWindow();
-
+        var infowindow = new google.maps.InfoWindow();
 
      MyLocations.map((loc,index)=>{
-
-       marker = new google.maps.Marker({
-        position: loc.location,
-        map: map,
-        title: loc.title,
-      });
+        marker = new google.maps.Marker({
+         position: loc.location,
+          map: map,
+         title: loc.title,
+        });
 
         google.maps.event.addListener(marker,'click', (function(marker,index) {
         return function() {
@@ -35,4 +34,4 @@
         }
       })(marker, index));
      })
-		}
+}
